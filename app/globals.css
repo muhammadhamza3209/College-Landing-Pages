@@ -2,32 +2,123 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.dr {
+  background-image: linear-gradient(#517e86c4, #949fdf1a),
+    url("../public/banner1.png");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.hr {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.ll {
+  background: #24f8c741;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -100%;
+  left: 0px;
+  transition: 0.5s;
+  border-radius: 20px;
+}
+
+.hr:hover .ll {
+  bottom: 0;
+}
+
+.jj {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url("../public/back1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+nav {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 50px 30px 30px;
+}
+
+.logo {
+  color: white;
+  font-size: 30px;
+}
+
+nav ul li {
+  margin: 0px 30px;
+  font-size: 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+label {
+  display: none;
+}
+
+#click {
+  display: none;
+}
+
+@media (max-width: 940px) {
+  nav ul {
+    padding: 20px 30px;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: rgb(87, 138, 87);
+    height: 100vh;
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: 0.5s;
+  }
+
+  #click:checked ~ ul {
+    left: 0%;
+  }
+
+  label {
+    display: block;
+    cursor: pointer;
+  }
+
+  nav ul li {
+    margin: 30px 0px;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.im {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url("../public/banner.png");
+  background-position: center;
+  background-size: cover;
 }
